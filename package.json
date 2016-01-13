@@ -1,0 +1,19 @@
+{
+  "name": "Mercury",
+  "version": "1.0.0",
+  "description": "my first full-stack try...",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "startup": "node app/server.js --port 8090",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhaozhongsheng <jing51536@126.com>",
+  "license": "ISC"
+}
