@@ -6,7 +6,7 @@ var express = require('express');
 var define = require('./define');
 var route = require('./route');
 
-function start(){
+module.exports = function(){
   function onRequest(request,response,next){
     request.setEncoding('utf-8');
     request.on('data', function(datachunk){
@@ -14,7 +14,7 @@ function start(){
     request.on('end', function(){
       var _url = url.parse(request.url);
       var pathname = _url.pathname;
-      var handle = handleMap[pathname];
+      var handle = route[pathname];
       var method = request.method.toLowerCase();
 
       if( handle && handle[method]){
@@ -32,6 +32,7 @@ function start(){
 
   var app = express();
   var server = http.createServer(app);
+  app.use(express.static(__dirname + '/public'));
   app.use(onRequest);
   server.listen(define.port | 8891, function(){
     console.log("server["+define.port+"] has started...");
@@ -40,5 +41,3 @@ function start(){
     console.log("server closed...");
   });
 }
-
-start();

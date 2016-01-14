@@ -7,11 +7,12 @@
     "test": "test"
   },
   "dependencies": {
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "supervisor": "*.*.*"
   },
   "devDependencies": {},
   "scripts": {
-    "startup": "node app/server.js --port 8090",
+    "startup": "supervisor app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "zhaozhongsheng <jing51536@126.com>",
