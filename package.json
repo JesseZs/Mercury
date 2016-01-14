@@ -8,7 +8,12 @@
   },
   "dependencies": {
     "express": "^4.12.3",
-    "supervisor": "*.*.*"
+    "supervisor": "*.*.*",
+    "jade": "*.*.*",
+    "ejs": "*.*.*",
+    "body-parser": "*.*.*",
+    "multer": "^0.1.8",
+    "cookie-parser": "*.*.*"
   },
   "devDependencies": {},
   "scripts": {

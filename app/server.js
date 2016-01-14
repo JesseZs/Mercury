@@ -1,7 +1,9 @@
 var http = require('http');
-var url = require('url');
-
 var express = require('express');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var multer = require('multer');
+var ejs = require('ejs');
 
 var define = require('./define');
 var route = require('./route');
@@ -9,31 +11,45 @@ var route = require('./route');
 module.exports = function(){
   function onRequest(request,response,next){
     request.setEncoding('utf-8');
-    request.on('data', function(datachunk){
-    });
-    request.on('end', function(){
-      var _url = url.parse(request.url);
-      var pathname = _url.pathname;
-      var handle = route[pathname];
-      var method = request.method.toLowerCase();
+    var path = request.path;
+    var method = request.method.toLowerCase();
 
-      if( handle && handle[method]){
-        console.log("---request---path["+pathname+"] method["+method+"]---");
-        handle[method](request, response);
+    var match = false;
+    for(var reg in route){
+      if(reg.match(path) && route[reg][method]){
+        console.log("---request---path["+path+"] method["+method+"]---");
+        route[reg][method](request, response);
+        match = true;
+        break;
       }
-      else{
-        console.log("unrecognized handle... path["+pathname+"] method["+method+"]");
-        response.writeHead(404, {'Content-Type': 'text/plain'});
-        response.write('404 Not found!~');
-        response.end();
-      }
-    });
+    }
+
+    if(!match){
+      console.log("unrecognized handle... path["+path+"] method["+method+"]");
+      response.writeHead(404, {'Content-Type': 'text/plain'});
+      response.write('404 Not found!~');
+      response.end();
+    }
   }
 
   var app = express();
   var server = http.createServer(app);
+
+  // body parser
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({extended: true}));
+  app.use(multer({dest:'./uploads', limits: {fileSize: 100000000}}));
+  app.use(cookieParser());
+  // view
+  app.set('views', __dirname + '/view');
+  app.engine('.html', ejs.__express);
+  app.set('view engine', 'html');
+  // static
   app.use(express.static(__dirname + '/public'));
+
+  //router
   app.use(onRequest);
+
   server.listen(define.port | 8891, function(){
     console.log("server["+define.port+"] has started...");
   });
