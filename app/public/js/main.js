@@ -1,27 +1,8 @@
-(function(t){
-  if(!t){
-    window.A = t;
-  }else{
-    window[t] = t;
-  }
-  var t = {
-
-  };
-
+(function(){
   var mainLoad = window.onload;
   window.onload = function(){
     if(mainLoad) mainLoad();
-    console.log("main");
-    for(var i=0; i<1; ++i){
-      var test='test';
-      console.log("for1");
-    }
-    console.log(test);
-    console.log(i);
-    for(var i=0; i<1; ++i){
-      console.log("for2");
-    }
-
+    
     var img = new Image();
     img.id = "img1";
     img.src = "images/2.png";
@@ -35,4 +16,4 @@
     }, 50);
   }
 
-})('A');
+})();

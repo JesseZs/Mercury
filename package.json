@@ -13,7 +13,8 @@
     "ejs": "*.*.*",
     "body-parser": "*.*.*",
     "multer": "^0.1.8",
-    "cookie-parser": "*.*.*"
+    "cookie-parser": "*.*.*",
+    "mongodb": "*.*.*"
   },
   "devDependencies": {},
   "scripts": {

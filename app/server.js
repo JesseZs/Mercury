@@ -7,6 +7,7 @@ var ejs = require('ejs');
 
 var define = require('./define');
 var route = require('./route');
+var mongo = require('./core/mongo');
 
 module.exports = function(){
   function onRequest(request,response,next){
@@ -50,10 +51,14 @@ module.exports = function(){
   //router
   app.use(onRequest);
 
+  //mongo
+  mongo.open();
+
   server.listen(define.port | 8891, function(){
     console.log("server["+define.port+"] has started...");
   });
   server.on('close', function(){
+    mongo.close();
     console.log("server closed...");
   });
 }
