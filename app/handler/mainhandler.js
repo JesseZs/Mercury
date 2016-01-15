@@ -1,7 +1,7 @@
 
 module.exports = {
   get : function(request, response){
-    response.render('index', {'data': "hello nodejs!~"});
+    response.render('main', {'data': "hello nodejs!~"});
   },
 
   post : function(request, response){

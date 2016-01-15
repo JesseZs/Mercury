@@ -1,0 +1,39 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>微信新功能</title>
+    <link href="/css/main.css" rel="stylesheet">
+
+    <script src="/js/utils/encrypt.js"></script>
+    <script src="/js/network/service.js"></script>
+    <script src="/js/network/session.js"></script>
+
+    <script src="/js/jquery-1.11.3.min.js"></script>
+  </head>
+  <body>
+    <div class='contain-center'>
+      <img id="noTaskIcon" src="/images/no_task@2x.png"></img>
+      <div class="noTaskText">暂时没有任务</div>
+      <div class="noTaskText">快去新建个任务吧</div>
+      <span id="newTask">新建任务</span>
+    </div>
+    <div class='contain-bottom'>
+      <span id="downloadLighting">下载轻醒完整版</span>
+    </div>
+
+    <script>
+      $("span#newTask").click(function(e){
+        var url = document.location.href;
+        url.replace(/\/[^\/.]*.html/, "/new.html");
+        window.location.href = url;
+      });
+      $("span#downloadLighting").click(function(e){
+        var url = document.location.href;
+        url.replace(document.location.pathname, "");
+        window.location.href = url + "app/detail.html";
+      });
+    </script>
+  </body>
+</html>

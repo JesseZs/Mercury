@@ -1,0 +1,72 @@
+.contain-center{
+  position: relative;
+  margin:0 auto;
+  padding:0;
+  text-align: center;
+  width: 240px;
+  height: 380px;
+}
+
+.contain-bottom{
+  position: relative;
+  margin:0 auto;
+  padding:0;
+  text-align: center;
+  width: 240px;
+  height: 200px;
+}
+
+
+#noTaskIcon{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  left: 75px;
+  top: 100px;
+  margin: auto;
+  clear: both;
+  display: block;
+}
+
+.noTaskText{
+  position: relative;
+  display:block;
+  top:200px;
+  text-align: center;
+  font-size: 16px;
+  color: #828386;
+  margin:10px auto;
+}
+
+#newTask{
+  position: relative;
+  display:block;
+  width:104px;
+  height:32px;
+  top: 240px;
+  line-height: 32px;
+  text-align: center;
+  margin:10px auto;
+  background: #828386;
+  font-size: 16px;
+  color: #FFFFFF;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+#downloadLighting{
+  position: absolute;
+  bottom: 100px;
+  display:block;
+  width:150px;
+  height:35px;
+  left:45px;
+  line-height: 35px;
+  text-align: center;
+  margin:10px auto;
+  background: #FFE13D;
+  font-size: 16px;
+  color: #828386;
+  border-radius:6px;
+  cursor:pointer;
+}
