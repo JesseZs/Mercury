@@ -25,14 +25,10 @@
 
     <script>
       $("span#newTask").click(function(e){
-        var url = document.location.href;
-        url.replace(/\/[^\/.]*.html/, "/new.html");
-        window.location.href = url;
+        window.location.href = "/weixin/wx-task/new.html";
       });
       $("span#downloadLighting").click(function(e){
-        var url = document.location.href;
-        url.replace(document.location.pathname, "");
-        window.location.href = url + "app/detail.html";
+        window.location.href = "/app/detail.html";
       });
     </script>
   </body>
