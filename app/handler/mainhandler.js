@@ -1,7 +1,9 @@
 
 module.exports = {
   get : function(request, response){
-    response.render('main', {'data': "hello nodejs!~"});
+    var data = request.params;
+    if(data == null) data = {};
+    response.render('main', data);
   },
 
   post : function(request, response){
