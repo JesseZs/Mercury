@@ -171,7 +171,7 @@ HttpService.prototype = {
         }
         for(var k in requestFiles)
         {
-          paramArray.push('Content-Disposition: form-data; name="'+requestFiles[k].key+'"; filename="'+requestFiles[k].name+'"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\n'+requestFiles[k]);
+          paramArray.push('Content-Disposition: form-data; name="'+requestFiles[k].key+'"; filename="'+unescape(encodeURIComponent(requestFiles[k].name))+'"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\n'+requestFiles[k]);
         }
         /* enctype is multipart/form-data */
         request.open("POST", requestUrl, true);

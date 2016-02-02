@@ -13,24 +13,21 @@
     <script src="/js/jquery-1.11.3.min.js"></script>
   </head>
   <body>
-    <div class='contain-body'>
-      <div class='contain-center'>
-        <img id="noTaskIcon" src="/images/no_task@2x.png"></img>
-        <div class="noTaskText">暂时没有任务</div>
-        <div class="noTaskText">快去新建个任务吧</div>
-        <a id="newTask">新建任务</a>
+    <div class='top-bar'>
+      <img src="/images/no_task@2x.png"></img>
+    </div>
+    <div class='main-body'>
+      <div class='left-bar'>
+        <ul>
+          <li>name1</li>
+          <li>name2</li>
+          <li>name3</li>
+        </ul>
+      </div>
+      <div class='center-body'>
+        hello world
       </div>
     </div>
-    <div class='contain-bottom'>
-      <a id="downloadLighting">下载轻醒完整版</a>
-    </div>
-    <script>
-      $("span#newTask").click(function(e){
-        window.location.href = "/weixin/wx-task/new.html";
-      });
-      $("span#downloadLighting").click(function(e){
-        window.location.href = "/app/detail.html";
-      });
-    </script>
+
   </body>
 </html>

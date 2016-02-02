@@ -16,16 +16,26 @@ module.exports = function(){
     var method = request.method.toLowerCase();
 
     var match = false;
-    for(var reg in route){
-      if(reg.match(path) && route[reg][method]){
-        console.log("---request---path["+path+"] method["+method+"]---");
-        route[reg][method](request, response);
-        match = true;
-        break;
-      }
-    }
+    // for(var reg in route){
+    //   if(reg.match(path) && route[reg][method]){
+    //     console.log("---request---path["+path+"] method["+method+"]---");
+    //     route[reg][method](request, response);
+    //     match = true;
+    //     break;
+    //   }
+    // }
+    //
+    // if(!match){
+    //   console.log("unrecognized handle... path["+path+"] method["+method+"]");
+    //   response.writeHead(404, {'Content-Type': 'text/plain'});
+    //   response.write('404 Not found!~');
+    //   response.end();
+    // }
 
-    if(!match){
+    if(route[path] && route[path][method]){
+      route[path][method](request, response);
+    }
+    else{
       console.log("unrecognized handle... path["+path+"] method["+method+"]");
       response.writeHead(404, {'Content-Type': 'text/plain'});
       response.write('404 Not found!~');

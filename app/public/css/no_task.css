@@ -1,0 +1,83 @@
+
+.contain-body{
+  position: fixed;
+  margin:0;
+  padding:0;
+  text-align: center;
+  width: 100%;
+  top:0px;
+  bottom: 100px;
+  overflow-y: auto;
+}
+
+.contain-center{
+  position: relative;
+  margin:0 auto;
+  padding:0;
+  text-align: center;
+  top: 200px auto;
+  max-width: 800px;
+  height: 100%;
+}
+
+.contain-bottom{
+  position: fixed;
+  margin:0;
+  padding:0;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  bottom: 0px;
+}
+
+#noTaskIcon{
+  position: relative;
+  width: 90px;
+  height: 90px;
+  top: 90px;
+  margin: auto;
+  clear: both;
+  display: block;
+}
+
+.noTaskText{
+position: relative;
+display:block;
+top:90px;
+}
+
+#newTask{
+  position: relative;
+  display:block;
+  width:104px;
+  height:32px;
+  top: 140px;
+  line-height: 32px;
+  text-align: center;
+  margin:10px auto;
+  background: #828386;
+  font-size: 16px;
+  color: #FFFFFF;
+  border-radius:12px;
+  cursor:pointer;
+  text-decoration: none;
+}
+
+#downloadLighting{
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  display:block;
+  width:150px;
+  height:35px;
+  line-height: 35px;
+  text-align: center;
+  margin:0px auto;
+  padding: 0px;
+  background: #FFE13D;
+  font-size: 16px;
+  color: #828386;
+  border-radius:6px;
+  cursor:pointer;
+  text-decoration: none;
+}
