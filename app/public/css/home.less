@@ -1,0 +1,27 @@
+@import (reference) "../../../node_modules/bootstrap/less/bootstrap";
+
+@import "../../../node_modules/bootstrap/less/navs";
+@import "../../../node_modules/bootstrap/less/navbar";
+@import "../../../node_modules/bootstrap/less/dropdowns";
+
+@import "../../../node_modules/bootstrap/less/carousel";
+@import "../../../node_modules/bootstrap/less/glyphicons";
+
+.left:extend(.left){}
+.right:extend(.right){}
+.container:extend(.container){}
+.sr-only:extend(.sr-only){}
+
+@black: #FFF;
+
+body{
+  background-color: @black;
+}
+
+a{
+  text-decoration: none;
+}
+
+.navbar-brand:extend(.navbar-brand){
+  height: auto;
+}

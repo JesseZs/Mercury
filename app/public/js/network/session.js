@@ -164,10 +164,10 @@ Session.prototype = {
 
 };
 
-(function(t){
-  if(!t){
+(function(t) {
+  if (!t) {
     window.S = new Session();
-  }else{
+  } else {
     window[t] = new Session();
   }
-)('S');
+})('S');
