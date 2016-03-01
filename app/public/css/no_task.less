@@ -15,7 +15,7 @@
   margin:0 auto;
   padding:0;
   text-align: center;
-  top: 200px auto;
+  top: auto;
   max-width: 800px;
   height: 100%;
 }
@@ -80,4 +80,53 @@ top:90px;
   border-radius:6px;
   cursor:pointer;
   text-decoration: none;
+}
+
+@keyframes fadeout {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.animation-fadeout-3 {
+  animation: fadeout 3s;
+}
+
+.animation-fadein-3 {
+  animation: fadein 3s;
+}
+
+#dialog {
+  background-color:white;
+  border:1px solid rgba(7,7,7,0.1);
+  height:240px;
+  left:50%;
+  margin:-120px 0 0 -120px;
+  padding:10px;
+  position:fixed !important; /* 浮动对话框 */
+  position:absolute;
+  top:40%;
+  width:240px;
+  z-index:5;
+  border-radius:15px;
+  display: none;
+  text-align: center;
+}
+#dialog hr {
+  color: rgba(7,7,7,0.1);
+  border-color: rgba(7,7,7,0.1);
+}
+#dialog .dialog-head {
+  font-size: 24px;
+  color: #8c8c8c;
+  text-align: center;
+}
+#dialog .dialog-body {
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  color: #6c6c6c;
 }
