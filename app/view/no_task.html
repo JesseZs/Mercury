@@ -4,6 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>微信新功能</title>
+    <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
     <link href="/css/no_task.css" rel="stylesheet">
 
     <script src="/js/jquery-1.11.3.min.js"></script>
@@ -14,6 +15,7 @@
       <hr>
       <div class="dialog-body">明天下下午，f1202，开会！~</div>
     </div>
+    <div id="overlay"></div>
     <div class='contain-body'>
       <div class='contain-center'>
         <img id="noTaskIcon" src="/images/no_task@2x.png"/>
@@ -29,6 +31,7 @@
       $("#newTask").click(function(e){
         //window.location.href = "/weixin/wx-task/new.html";
         $("#dialog").fadeIn();
+        $("#overlay").fadeIn();
         if(e.stopPropagation){
           e.stopPropagation();
         }
@@ -36,11 +39,16 @@
       $("span#downloadLighting").click(function(e){
         window.location.href = "/app/detail.html";
       });
-      $(document).click(function(e){
-        if(!($(e.target).is("#dialog") ||
-                $(e.target).parents("#dialog").length > 0)){
-          $("#dialog").fadeOut();
-        }
+//      $(document).click(function(e){
+//        if(!($(e.target).is("#dialog") ||
+//                $(e.target).parents("#dialog").length > 0)){
+//          $("#dialog").fadeOut();
+//          $("#overlay").fadeOut();
+//        }
+//      });
+      $("#overlay").click(function(e){
+        $("#dialog").fadeOut();
+        $("#overlay").fadeOut();
       });
     </script>
   </body>
