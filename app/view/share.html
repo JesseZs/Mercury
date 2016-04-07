@@ -1,0 +1,23 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>微信新功能</title>
+  <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/css/share.css" rel="stylesheet">
+
+  <script src="/js/jquery-1.11.3.min.js"></script>
+  <script src="/js/jquery.qrcode.min.js"></script>
+</head>
+<body>
+  <div id="qrcode"></div>
+  <div id="share_title">3月1日-3月20日的是程表</div>
+  <div id="share_list">hello world</div>
+<script>
+  $(document).ready(function(){
+    jQuery('#qrcode').qrcode("hello world");
+  });
+</script>
+</body>
+</html>

@@ -29,6 +29,19 @@
         hello world
       </div>
     </div>
+    <script>
+      var client = new WebSocket("wss://127.0.0.1:8080/duplex/websocket");
+      client.onopen = function(event) {
+        console.log("open...");
+        client.send(JSON.stringify({"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE0NTIwNDcyMzMsInVzZXJ2ZXJpZnkiOiIiLCJ0aW1lIjoxNDUyMDQ3MjM4MzAzLCJ0b2tlbnNlY3JldCI6InRva2VuX3NlY3JldCIsImV4cCI6MzA4MjM0NTM1MCwidXNlcmlkIjoiMjg5IiwiaWF0IjoxNDUyMDQ3MjM4LCJqdGkiOiI1NTZjYTkxZS1mN2RkLTQzOTItODllYi0zMTNlM2RmMjU3ZGIifQ.g28zAD5WI5gMv3ikehN_AuP6UpSjN_HZlW1H9S65YFs"}));
+      }
+      client.onclose = function(event) {
+        console.log("close...");
+      }
+      client.onmessage = function(event){
+        console.log(event.data);
+      }
+    </script>
 
   </body>
 </html>
